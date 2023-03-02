@@ -10,7 +10,7 @@ const findAllUser = async () => {
 const findUserById = async (id) => {
     const data = await Users.findOne({
         where: {
-            id: id
+            id
         }
     })
     return data
@@ -19,7 +19,7 @@ const findUserById = async (id) => {
 const findUserByEmail = async (email) => {
     const data = await Users.findOne({
         where: {
-            email: email
+            email
         }
     })
     return data
@@ -43,7 +43,7 @@ const updateUser = async (id, userObj) => {
     //data === 1
     const data = await Users.update(userObj,{
         where: {
-            id: id
+            id
         }
     })
     return data[0]
@@ -52,7 +52,7 @@ const updateUser = async (id, userObj) => {
 const deleteUser = async (id) => {
     const data = await Users.destroy({
         where: {
-            id: id
+            id
         }
     })
     return data

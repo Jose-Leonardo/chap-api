@@ -23,7 +23,7 @@ const getAllUsers = (req, res) => {
 }
 
 const getUserById = (req ,res) => {
-    const id = req.params.id 
+    const {id} = req.params
     usersControllers.findUserById(id)
         .then(data => {
             if(data){
@@ -81,7 +81,7 @@ const postNewUser = (req, res) => {
 }
 
 const patchUser = (req, res) => {
-    const id = req.params.id 
+    const {id} = req.params 
     const userObj = req.body 
 
     usersControllers.updateUser(id, userObj)
@@ -128,7 +128,7 @@ const patchUser = (req, res) => {
 }
 
 const deleteUser = (req, res) => {
-    const id = req.params.id 
+    const {id} = req.params 
 
     usersControllers.deleteUser(id)
         .then(data => {
@@ -162,7 +162,7 @@ const deleteUser = (req, res) => {
 
 const getMyUser = (req, res) => {
 
-    const id = req.user.id
+    const {id} = req.user
 
     usersControllers.findUserById(id)
         .then(data => {
@@ -185,7 +185,7 @@ const getMyUser = (req, res) => {
 
 const deleteMyUser = (req, res) => {
 
-    const id = req.user.id
+    const {id} = req.user
 
     usersControllers.deleteUser(id)
         .then(data => {
@@ -207,7 +207,7 @@ const deleteMyUser = (req, res) => {
 
 const patchMyUser = (req, res) => {
 
-    const id = req.user.id //? Esto es unicamente para saber quien es el usuario
+    const {id} = req.user //? Esto es unicamente para saber quien es el usuario
 
     const { firstName, lastName, email, password, profileImage, phone } = req.body
 

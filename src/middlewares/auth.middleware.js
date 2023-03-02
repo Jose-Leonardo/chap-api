@@ -1,16 +1,17 @@
-//? Importamos de passport-jwt las 2 cositas de aqui abajo
+//* Importamos de passport-jwt las 2 cositas de aqui abajo
 const { ExtractJwt, Strategy } = require('passport-jwt')
-//? Importamos de passport el core completo
+//* Importamos de passport el core completo
 const passport = require('passport')
+//const jwtSecret = require('')
 
-//? Importamos nuestro controlador que nos va a permitir validar si el usuario existe en mi db
+//* Importamos nuestro controlador que nos va a permitir validar si el usuario existe en mi db
 const { findUserById } = require('../users/users.controllers')
  
 //? Generamos configuraciones basicas para manejar passport con jwt
 const passportConfigs = {
     //? Esta configuracion lo que hace es extraer el Bearer Token de mi peticion
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), //? 
-    secretOrKey: 'academlo'
+    secretOrKey: 'ac4deml0'
 }
 
 
